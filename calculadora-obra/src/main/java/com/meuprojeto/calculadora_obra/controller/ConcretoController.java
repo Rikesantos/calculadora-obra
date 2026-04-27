@@ -6,6 +6,7 @@ import com.meuprojeto.calculadora_obra.repository.ArestaRepository;
 import com.meuprojeto.calculadora_obra.service.ConcretoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
@@ -20,13 +21,15 @@ public class ConcretoController {
     private ArestaRepository repository;
 
     @PostMapping("/calcular")
-    public double calcular(@RequestBody List<Aresta> arestas,
-                           @RequestParam double altura) {
+    public ResponseEntity<Double> calcular(@RequestBody List<Aresta> arestas,
+                                           @RequestParam double altura) {
 
         // salva no banco
         repository.saveAll(arestas);
 
         // calcula
-        return service.calcularVolume(arestas, altura);
+        double resultado = service.calcularVolume(arestas, altura);
+
+        return ResponseEntity.ok(resultado);
     }
 }
