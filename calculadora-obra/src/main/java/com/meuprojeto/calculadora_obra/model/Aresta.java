@@ -1,6 +1,7 @@
 package com.meuprojeto.calculadora_obra.model;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Aresta {
@@ -9,10 +10,12 @@ public class Aresta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "vertice_inicio_id")
     private Vertice inicio;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "vertice_fim_id")
     private Vertice fim;
@@ -41,40 +44,97 @@ public class Aresta {
         return areaParede - (areaPorta + areaJanela);
     }
 
-    // getters e setters
+    // GETTERS E SETTERS
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public Vertice getInicio() { return inicio; }
-    public void setInicio(Vertice inicio) { this.inicio = inicio; }
+    public Vertice getInicio() {
+        return inicio;
+    }
 
-    public Vertice getFim() { return fim; }
-    public void setFim(Vertice fim) { this.fim = fim; }
+    public void setInicio(Vertice inicio) {
+        this.inicio = inicio;
+    }
 
-    public double getComprimento() { return comprimento; }
-    public void setComprimento(double comprimento) { this.comprimento = comprimento; }
+    public Vertice getFim() {
+        return fim;
+    }
 
-    public double getLargura() { return largura; }
-    public void setLargura(double largura) { this.largura = largura; }
+    public void setFim(Vertice fim) {
+        this.fim = fim;
+    }
 
-    public double getAltura() { return altura; }
-    public void setAltura(double altura) { this.altura = altura; }
+    public double getComprimento() {
+        return comprimento;
+    }
 
-    public boolean isTemPorta() { return temPorta; }
-    public void setTemPorta(boolean temPorta) { this.temPorta = temPorta; }
+    public void setComprimento(double comprimento) {
+        this.comprimento = comprimento;
+    }
 
-    public boolean isTemJanela() { return temJanela; }
-    public void setTemJanela(boolean temJanela) { this.temJanela = temJanela; }
+    public double getLargura() {
+        return largura;
+    }
 
-    public double getAlturaPorta() { return alturaPorta; }
-    public void setAlturaPorta(double alturaPorta) { this.alturaPorta = alturaPorta; }
+    public void setLargura(double largura) {
+        this.largura = largura;
+    }
 
-    public double getLarguraPorta() { return larguraPorta; }
-    public void setLarguraPorta(double larguraPorta) { this.larguraPorta = larguraPorta; }
+    public double getAltura() {
+        return altura;
+    }
 
-    public double getAlturaJanela() { return alturaJanela; }
-    public void setAlturaJanela(double alturaJanela) { this.alturaJanela = alturaJanela; }
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
 
-    public double getLarguraJanela() { return larguraJanela; }
-    public void setLarguraJanela(double larguraJanela) { this.larguraJanela = larguraJanela; }
+    public boolean isTemPorta() {
+        return temPorta;
+    }
+
+    public void setTemPorta(boolean temPorta) {
+        this.temPorta = temPorta;
+    }
+
+    public boolean isTemJanela() {
+        return temJanela;
+    }
+
+    public void setTemJanela(boolean temJanela) {
+        this.temJanela = temJanela;
+    }
+
+    public double getAlturaPorta() {
+        return alturaPorta;
+    }
+
+    public void setAlturaPorta(double alturaPorta) {
+        this.alturaPorta = alturaPorta;
+    }
+
+    public double getLarguraPorta() {
+        return larguraPorta;
+    }
+
+    public void setLarguraPorta(double larguraPorta) {
+        this.larguraPorta = larguraPorta;
+    }
+
+    public double getAlturaJanela() {
+        return alturaJanela;
+    }
+
+    public void setAlturaJanela(double alturaJanela) {
+        this.alturaJanela = alturaJanela;
+    }
+
+    public double getLarguraJanela() {
+        return larguraJanela;
+    }
+
+    public void setLarguraJanela(double larguraJanela) {
+        this.larguraJanela = larguraJanela;
+    }
 }

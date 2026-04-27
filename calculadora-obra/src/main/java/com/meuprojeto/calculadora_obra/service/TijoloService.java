@@ -15,7 +15,7 @@ public class TijoloService {
         }
 
         double areaTijolo = 0.20 * 0.10; // 0.02 m²
-        return areaTotal / areaTijolo;
+        return Math.round(areaTotal * 20);
 
     }
 
