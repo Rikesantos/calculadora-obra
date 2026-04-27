@@ -33,9 +33,22 @@ POST `/concreto/calcular`
 POST `/obra/resumo`
 
 ## 🧪 Como executar
+## Como acessar
 
-1. Rodar o projeto no IntelliJ
-2. Acessar: http://localhost:8080/
+Após executar o projeto, acesse:
+
+http://localhost:8080/
+
+A rota inicial retorna uma mensagem indicando que a API está funcionando.
+
+Principais endpoints:
+
+- GET `/comodos`
+- POST `/comodos`
+- POST `/concreto/calcular`
+- POST `/tijolos/calcular`
+- POST `/obra/resumo`
+- GET `/comodos/{id}/tijolos`
  
 3. Testar endpoints com Postman
 
