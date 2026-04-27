@@ -7,21 +7,17 @@ import java.util.List;
 
 @Service
 public class TijoloService {
-
-    public double calcularQuantidade(List<Aresta> arestas,
-                                     double alturaTijolo,
-                                     double larguraTijolo) {
-
-        double total = 0;
-        double areaTijolo = alturaTijolo * larguraTijolo;
+    public double calcularQuantidadeTijolos(List<Aresta> arestas) {
+        double areaTotal = 0;
 
         for (Aresta a : arestas) {
-            double areaParede = a.calcularAreaLiquida();
-            total += areaParede / areaTijolo;
+            areaTotal += a.calcularAreaLiquida();
         }
 
-        return Math.ceil(total);
+        double areaTijolo = 0.20 * 0.10; // 0.02 m²
+        return areaTotal / areaTijolo;
+
     }
+
+
 }
-
-
