@@ -1,68 +1,105 @@
-# Calculadora de Obra - Spring Boot
+# 🏗️ Calculadora de Obra - Spring Boot
 
 ## 📌 Descrição
-Projeto desenvolvido para calcular materiais de uma obra com base na planta baixa representada como um grafo.
 
-## 🧠 Conceitos Utilizados
-- Grafo (Vértices e Arestas)
-- API REST
-- Spring Boot
-- JPA / Hibernate
-- Banco H2
+Este projeto tem como objetivo calcular materiais de construção a partir da modelagem de uma planta baixa como um grafo G(V, A).
 
-## 🏗 Estrutura
-- **Vértice**: ponto de encontro das paredes
-- **Aresta**: parede da construção
-- **Cômodo**: conjunto de paredes
+- V (Vértices): representam os encontros das paredes (pilares)
+- A (Arestas): representam as paredes da construção
 
-## ⚙️ Funcionalidades
-
-### ✔ Cadastro de cômodos
-POST `/comodos`
-
-### ✔ Listagem de cômodos
-GET `/comodos`
-
-### ✔ Cálculo de tijolos por cômodo
-GET `/comodos/{id}/tijolos`
-
-### ✔ Cálculo de concreto
-POST `/concreto/calcular`
-
-### ✔ Resumo da obra
-POST `/obra/resumo`
-
-## 🧪 Como executar
-## Como acessar
-
-Após executar o projeto, acesse:
-
-http://localhost:8080/
-
-A rota inicial retorna uma mensagem indicando que a API está funcionando.
-
-Principais endpoints:
-
-- GET `/comodos`
-- POST `/comodos`
-- POST `/concreto/calcular`
-- POST `/tijolos/calcular`
-- POST `/obra/resumo`
-- GET `/comodos/{id}/tijolos`
- 
-3. Testar endpoints com Postman
-
-## 📊 Exemplo de cálculo
-
-Entrada:
-- Paredes com dimensões
-- Portas e janelas
-
-Saída:
+O sistema permite calcular:
+- Volume de concreto (viga baldrame)
 - Quantidade de tijolos
-- Volume de concreto
+- Resumo geral da obra
 
 ---
 
-## 👨‍💻 Autor
+## 🧠 Tecnologias Utilizadas
+
+- Java
+- Spring Boot
+- Maven
+- JPA / Hibernate
+- Banco H2 (em memória)
+- Git e GitHub
+- Postman (testes)
+
+---
+
+## 📐 Modelagem do Sistema
+
+A aplicação representa a planta como um grafo:
+
+- **Vertice** → encontros das paredes
+- **Aresta** → paredes com dimensões e informações de portas/janelas
+- **Comodo** → conjunto de arestas
+
+---
+
+## 🚀 Como executar o projeto
+
+1. Clonar o repositório:
+```bash
+git clone https://github.com/Rikesantos/calculadora-obra.git
+
+Abrir no IntelliJ
+Rodar a aplicação
+Acessar:
+http://localhost:8080/
+
+🔗 Principais Endpoints
+✔ Listar cômodos
+GET /comodos
+
+✔ Cadastrar cômodo
+POST /comodos
+
+✔ Calcular tijolos por cômodo
+GET /comodos/{id}/tijolos
+
+✔ Calcular concreto
+POST /concreto/calcular?altura=0.3
+
+✔ Calcular tijolos (lista de paredes)
+POST /tijolos/calcular
+
+✔ Resumo da obra
+POST /obra/resumo?alturaBaldrame=0.3
+
+🧪 Exemplos de Testes
+🔹 Concreto
+
+Entrada:
+
+[
+  { "comprimento": 5, "largura": 0.2 },
+  { "comprimento": 4, "largura": 0.2 }
+]
+
+Resultado:
+
+0.54
+🔹 Tijolos
+
+Resultado:
+
+224
+🔹 Por Cômodo
+
+Resultado:
+
+528.0
+🔹 Resumo da Obra
+
+Resultado:
+
+{
+  "quantidadeTijolos": 528.0,
+  "volumeConcreto": 0.6
+}
+📊 Observações
+O valor 528.0 representa 528 tijolos, sendo exibido como decimal por conta do tipo double utilizado no Java.
+O sistema foi desenvolvido com foco em organização, clareza e funcionamento dos cálculos.
+👨‍💻 Autor
+
 Rikelme Da Silva Santos
