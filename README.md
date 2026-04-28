@@ -1,6 +1,6 @@
-# 🏗️ Calculadora de Obra - Spring Boot
+ Calculadora de Obra - Spring Boot
 
-## 📌 Descrição
+Descrição
 
 Este projeto tem como objetivo calcular materiais de construção a partir da modelagem de uma planta baixa como um grafo G(V, A).
 
@@ -14,7 +14,7 @@ O sistema permite calcular:
 
 ---
 
-## 🧠 Tecnologias Utilizadas
+ Tecnologias Utilizadas
 
 - Java
 - Spring Boot
@@ -26,7 +26,7 @@ O sistema permite calcular:
 
 ---
 
-## 📐 Modelagem do Sistema
+Modelagem do Sistema
 
 A aplicação representa a planta como um grafo:
 
@@ -36,7 +36,7 @@ A aplicação representa a planta como um grafo:
 
 ---
 
-## 🚀 Como executar o projeto
+ Como executar o projeto
 
 1. Clonar o repositório:
 ```bash
@@ -66,7 +66,7 @@ POST /tijolos/calcular
 ✔ Resumo da obra
 POST /obra/resumo?alturaBaldrame=0.3
 
-🧪 Exemplos de Testes
+Exemplos de Testes
 🔹 Concreto
 
 Entrada:
@@ -97,9 +97,9 @@ Resultado:
   "quantidadeTijolos": 528.0,
   "volumeConcreto": 0.6
 }
-📊 Observações
+ Observações
 O valor 528.0 representa 528 tijolos, sendo exibido como decimal por conta do tipo double utilizado no Java.
 O sistema foi desenvolvido com foco em organização, clareza e funcionamento dos cálculos.
-👨‍💻 Autor
 
+ Autor
 Rikelme Da Silva Santos
