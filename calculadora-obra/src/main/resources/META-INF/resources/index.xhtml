@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="jakarta.faces.html">
+
+<h:head>
+    <title>Calculadora de Obras</title>
+</h:head>
+
+<h:body>
+
+    <h1>Orçamento de Obra</h1>
+
+    <h:form>
+        <p>Nome do Cliente:</p>
+        <h:inputText value="#{orcamentoBean.nomeCliente}" />
+
+        <br/><br/>
+
+        <p>Área da Casa (m²):</p>
+        <h:inputText value="#{orcamentoBean.areaCasa}" />
+
+        <br/><br/>
+
+        <h:commandButton value="Calcular"
+                         action="#{orcamentoBean.calcular}" />
+
+        <br/><br/>
+
+        <h:outputText value="Valor Total: R$ #{orcamentoBean.valorTotal}" />
+    </h:form>
+
+</h:body>
+</html>
