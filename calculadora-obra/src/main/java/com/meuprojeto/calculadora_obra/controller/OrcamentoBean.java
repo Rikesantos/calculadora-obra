@@ -29,6 +29,8 @@ public class OrcamentoBean implements Serializable {
         orcamento.setValorTotal(valorTotal);
 
         repository.save(orcamento);
+
+        System.out.println("SALVO: " + nomeCliente);
     }
 
     public String getNomeCliente() {
