@@ -1,105 +1,91 @@
- Calculadora de Obra - Spring Boot
+# Calculadora de Materiais para Obra Residencial
 
-Descrição
+## Descrição
 
-Este projeto tem como objetivo calcular materiais de construção a partir da modelagem de uma planta baixa como um grafo G(V, A).
+Projeto desenvolvido para a disciplina de Desenvolvimento de Sistemas.
 
-- V (Vértices): representam os encontros das paredes (pilares)
-- A (Arestas): representam as paredes da construção
-
-O sistema permite calcular:
-- Volume de concreto (viga baldrame)
-- Quantidade de tijolos
-- Resumo geral da obra
+O sistema permite realizar o cálculo de um orçamento de obra residencial com base na área da casa informada pelo usuário. Os orçamentos são armazenados em banco de dados e podem ser consultados posteriormente pelo nome do cliente.
 
 ---
 
- Tecnologias Utilizadas
+## Tecnologias utilizadas
 
-- Java
+- Java 22
 - Spring Boot
+- Jakarta Faces (JSF)
+- Spring Data JPA
+- Banco de dados H2
 - Maven
-- JPA / Hibernate
-- Banco H2 (em memória)
-- Git e GitHub
-- Postman (testes)
+- IntelliJ IDEA
 
 ---
 
-Modelagem do Sistema
+## Funcionalidades
 
-A aplicação representa a planta como um grafo:
-
-- **Vertice** → encontros das paredes
-- **Aresta** → paredes com dimensões e informações de portas/janelas
-- **Comodo** → conjunto de arestas
+- Cadastro de orçamento
+- Cálculo automático do valor da obra
+- Armazenamento dos orçamentos no banco de dados
+- Consulta de orçamentos pelo nome do cliente
 
 ---
 
- Como executar o projeto
+## Como executar o projeto
 
-1. Clonar o repositório:
+1. Clone o repositório:
+
 ```bash
-git clone https://github.com/Rikesantos/calculadora-obra.git
+git clone https://github.com/Rikesantos/calculadora-obra
+```
 
-Abrir no IntelliJ
-Rodar a aplicação
-Acessar:
-http://localhost:8080/
+2. Abra o projeto no IntelliJ IDEA.
 
-🔗 Principais Endpoints
-✔ Listar cômodos
-GET /comodos
+3. Execute a classe:
 
-✔ Cadastrar cômodo
-POST /comodos
+```
+CalculadoraObraApplication.java
+```
 
-✔ Calcular tijolos por cômodo
-GET /comodos/{id}/tijolos
+4. Após iniciar a aplicação, acesse:
 
-✔ Calcular concreto
-POST /concreto/calcular?altura=0.3
+### Tela principal
 
-✔ Calcular tijolos (lista de paredes)
-POST /tijolos/calcular
+```
+http://localhost:8080/index.xhtml
+```
 
-✔ Resumo da obra
-POST /obra/resumo?alturaBaldrame=0.3
+### Consulta de orçamentos
 
-Exemplos de Testes
-🔹 Concreto
+```
+http://localhost:8080/consulta.xhtml
+```
 
-Entrada:
+---
 
-[
-  { "comprimento": 5, "largura": 0.2 },
-  { "comprimento": 4, "largura": 0.2 }
-]
+## Estrutura do projeto
 
-Resultado:
+```
+controller/
+entity/
+repository/
+META-INF/resources/
+```
 
-0.54
-🔹 Tijolos
+---
 
-Resultado:
+## Banco de dados
 
-224
-🔹 Por Cômodo
+O projeto utiliza o banco H2 em memória.
 
-Resultado:
+Caso deseje acessar o banco:
 
-528.0
-🔹 Resumo da Obra
+```
+http://localhost:8080/h2-console
+```
 
-Resultado:
+---
 
-{
-  "quantidadeTijolos": 528.0,
-  "volumeConcreto": 0.6
-}
- Observações
-O valor 528.0 representa 528 tijolos, sendo exibido como decimal por conta do tipo double utilizado no Java.
-O sistema foi desenvolvido com foco em organização, clareza e funcionamento dos cálculos.
+## Autor
 
- Autor
-Rikelme Da Silva Santos
+Rikelme da Silva Santos
+
+Projeto desenvolvido para fins acadêmicos.
