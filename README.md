@@ -47,13 +47,13 @@ CalculadoraObraApplication.java
 
 4. Após iniciar a aplicação, acesse:
 
-### Tela principal
+### Tela principal (Para realizar o cadastro)
 
 ```
 http://localhost:8080/index.xhtml
 ```
 
-### Consulta de orçamentos
+### Consulta de orçamentos (Para realizar as consultas)
 
 ```
 http://localhost:8080/consulta.xhtml
